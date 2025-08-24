@@ -40,7 +40,7 @@ const Header = () => {
 
             <div className="flex flex-col items-center gap-1.5 sm:gap-2 text-xs sm:text-sm">
               <div className="flex items-center gap-2 flex-wrap justify-center">
-                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                {/* <MapPin className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" /> */}
                 {/* <span className="text-center">73 Thanh Loan Street, Ward 5, District 8, HCMC</span> */}
               </div>
               

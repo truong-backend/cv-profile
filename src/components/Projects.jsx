@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase } from 'lucide-react';
+import { Briefcase, Users, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -11,59 +11,31 @@ const Projects = () => {
         { name: "Backend", url: "https://github.com/truong-backend/He-Thong-Diem-Danh-STU.git" },
         { name: "Frontend", url: "https://github.com/truong-backend/FRONT_END.git" }
       ],
-      highlights: [
-        "Design and implement APIs with JWT-based authorization",
-        "Develop functional modules for attendance management",
-        "Create responsive user interfaces using ReactJS and TailwindCSS",
-        "Build comprehensive attendance reports and statistics",
-        "Analyze and design optimized database structure"
+      teamSize: "1 (Individual Project)",
+      achievements: [
+        "Designed and implemented secure RESTful APIs with JWT-based authentication system",
+        "Developed comprehensive attendance management modules with role-based access control", 
+        "Built responsive user interfaces using ReactJS and TailwindCSS with optimized user experience",
+        "Created automated attendance reports and real-time statistics dashboard",
+        "Analyzed business requirements and designed normalized database structure for optimal performance",
+        "Implemented frontend-backend integration with proper error handling and data validation"
       ]
     },
     {
-      title: "Bookstore Website",
+      title: "Bookstore E-commerce Website", 
       period: "October 2024 - December 2024",
       tech: "C#, Entity Framework, Microsoft SQL Server, TailwindCSS",
       github: [
         { name: "Project Link", url: "https://github.com/truong-backend/ThucHanhOSS.git" }
       ],
       teamSize: "1 (Individual Project)",
-      highlights: [
-        "Implemented user authentication and registration system",
-        "Developed MVC architecture with clean separation of concerns",
-        "Integrated online payment processing via VNPay",
-        "Built shopping cart functionality and order management",
-        "Applied transaction handling for data consistency"
-      ]
-    },
-    {
-      title: "Mini Supermarket Management App",
-      period: "June 2024 - October 2024",
-      tech: "C#, Entity Framework, Microsoft SQL Server",
-      github: [
-        { name: "Project Link", url: "https://github.com/truong-backend/DoanCSharp.git" }
-      ],
-      teamSize: "3 (Team Project)",
-      highlights: [
-        "Developed comprehensive WinForms application for retail management",
-        "Implemented invoice management and product inventory tracking",
-        "Built revenue tracking and customer relationship management features",
-        "Created user-friendly interface for efficient business operations",
-        "Designed and optimized database for performance"
-      ]
-    },
-    {
-      title: "Movie Ticket Booking App",
-      period: "June 2024 - October 2024",
-      tech: "Java, Spring Boot, Microsoft SQL Server",
-      github: [
-        { name: "Project Link", url: "https://github.com/zHyuhz/OSS_AppDatVeXemPhim.git" }
-      ],
-      teamSize: "3 (Team Project)",
-      highlights: [
-        "Developed complete Android application using Java",
-        "Implemented ticket booking system with seat selection",
-        "Built user authentication and registration functionality",
-        "Integrated payment processing for ticket purchases"
+      achievements: [
+        "Implemented secure user authentication and registration system with session management",
+        "Developed MVC architecture following clean code principles and design patterns",
+        "Integrated VNPay payment gateway with transaction handling for data consistency",
+        "Built comprehensive shopping cart functionality and order management system",
+        "Applied database optimization techniques including indexing and query optimization",
+        "Implemented comprehensive error handling and logging system"
       ]
     }
   ];
@@ -77,39 +49,55 @@ const Projects = () => {
       <div className="space-y-6">
         {projects.map((project, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-md border hover:shadow-lg transition-shadow">
+            {/* Project Header */}
             <div className="mb-4">
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">{project.title}</h4>
-              <p className="text-sm text-gray-500 mb-2">{project.period}</p>
-              <div className="mb-2">
-                <span className="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium">
+              <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
+                <h4 className="text-xl font-semibold text-gray-800">{project.title}</h4>
+                <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{project.period}</span>
+              </div>
+              
+              {/* Tech Stack */}
+              <div className="mb-3">
+                <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
                   {project.tech}
                 </span>
               </div>
+              
+              {/* GitHub Links */}
               {project.github && (
-                <div className="mb-2">
-                  <span className="text-sm text-gray-600 mr-2">GitHub:</span>
+                <div className="mb-3 flex flex-wrap gap-2">
+                  <span className="text-sm text-gray-600 mr-1">GitHub:</span>
                   {project.github.map((link, i) => (
                     <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" 
-                       className="text-blue-600 hover:text-blue-800 text-sm mr-2 underline">
+                       className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 text-sm underline hover:no-underline transition-colors">
+                      <ExternalLink className="w-3 h-3" />
                       {link.name}
                     </a>
                   ))}
                 </div>
               )}
+              
+              {/* Team Size */}
               {project.teamSize && (
-                <p className="text-sm text-gray-600 mb-2">
-                  <strong>Team Size:</strong> {project.teamSize}
-                </p>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Users className="w-4 h-4" />
+                  <span><strong>Team Size:</strong> {project.teamSize}</span>
+                </div>
               )}
             </div>
-            <ul className="space-y-2">
-              {project.highlights.map((highlight, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-gray-700 text-sm">{highlight}</span>
-                </li>
-              ))}
-            </ul>
+            
+            {/* Key Achievements */}
+            <div>
+              <h5 className="font-semibold text-gray-800 mb-3">Key Achievements:</h5>
+              <ul className="space-y-2">
+                {project.achievements.map((achievement, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm">{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>

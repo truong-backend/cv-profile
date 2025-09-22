@@ -1,5 +1,6 @@
 import React from 'react';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, Award } from 'lucide-react';
+
 const Education = () => {
   return (
     <section className="mb-8">
@@ -9,8 +10,18 @@ const Education = () => {
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md border">
         <div className="mb-4">
-          <h4 className="text-lg font-semibold text-gray-800 mb-2">Saigon University of Technology</h4>
-          <p className="text-gray-600 mb-3">Faculty of Information Technology (2021 - 2025)</p>
+          <div className="flex justify-between items-start flex-wrap mb-2">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-1">Saigon University of Technology</h4>
+              <p className="text-gray-600 mb-1">Faculty of Information Technology</p>
+              <p className="text-sm text-gray-500">2021 - 2025 | Ho Chi Minh City, Vietnam</p>
+            </div>
+            <div className="flex items-center gap-2 bg-green-100 px-3 py-1 rounded-full">
+              <Award className="w-4 h-4 text-green-600" />
+              <span className="text-green-800 font-semibold text-sm">GPA: 8.22/10</span>
+            </div>
+          </div>
+          <p className="text-gray-700 font-medium mb-3">Bachelor of Information Technology</p>
         </div>
         <ul className="space-y-2">
           <li className="flex items-start gap-2">

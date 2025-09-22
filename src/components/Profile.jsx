@@ -1,22 +1,22 @@
 import React from 'react';
-import { User, Target, Zap } from 'lucide-react';
+import { User, Target, Zap, Database } from 'lucide-react';
 
 const Profile = () => {
   const highlights = [
     {
       icon: Target,
       title: "Backend Specialist",
-      description: "Java, Spring Boot, RESTful APIs"
+      description: "Java, Spring Boot, RESTful APIs, JWT Authentication"
+    },
+    {
+      icon: Database,
+      title: "Database Expert",
+      description: "MySQL & SQL Server - Triggers, Procedures, Views"
     },
     {
       icon: Zap,
       title: "Full-Stack Experience",
-      description: "Spring Boot + ReactJS projects"
-    },
-    {
-      icon: User,
-      title: "Problem Solver",
-      description: "Database design & optimization"
+      description: "Spring Boot + ReactJS, Real-time Communication"
     }
   ];
 
@@ -38,14 +38,15 @@ const Profile = () => {
         {/* Profile Description */}
         <div className="mb-8">
           <p className="text-gray-700 leading-relaxed text-lg font-medium mb-6">
-            Backend Developer with a strong foundation in Java, Spring Boot, RESTful APIs,
-            and web security. Practical experience in developing attendance applications
-            on Zalo Mini App and a full-stack student attendance management system.
+            Fresh graduate Backend Developer with deep understanding of Java, Spring Boot, and comprehensive database systems. 
+            Expert in complete database design lifecycle from requirement analysis to deployment, with advanced proficiency in 
+            both MySQL and SQL Server (Triggers, Functions, Stored Procedures, Views, Transactions, Cursors).
           </p>
           
           <p className="text-gray-600 leading-relaxed">
-            Skilled in database design, performance optimization, JWT-based
-            security, and Docker deployment. Energetic, eager to learn, and ready to contribute to impactful technology projects.
+            Strong foundation in OOP principles, data structures & algorithms, and proven ability in full-stack development. 
+            Demonstrated expertise in building secure RESTful APIs with JWT authentication and responsive web applications. 
+            Strong problem-solving mindset with logical thinking approach and excellent teamwork experience.
           </p>
         </div>
 

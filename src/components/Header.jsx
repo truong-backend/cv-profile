@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Github, FileText } from 'lucide-react';
 import avatar from '../resource/Image/AnhCV2.jpg';
-import cvPdf from '../resource/PDF/CVByCodeDomain.pdf';
+import cvPdf from '../resource/PDF/NguyenThanhTruong.pdf';
 
 const Header = () => {
   return (
